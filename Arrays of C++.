@@ -1,0 +1,125 @@
++-----------------+
+| Arrays : Making |
++-----------------+
+
+NOTE : User Can Define The Array in The Main Function.
+
+#include<iostream>
+using namespace std;
+int main (){
+  int size;
+  cin>>size;
+  int arr[size];
+  for(int i =0 ; i < size ; i++){
+    cin>>arr[i];
+  }
+  for(int i = 0 ; i < size ; i++){
+    cout<<arr[i]<<" ";
+  }
+
+
+
++--------------------------------------------------+
+| Array - Element Insertion at a specific position |
++--------------------------------------------------+
+
+NOTE : This is just the algorithm. The user still needs to prepair the main fuction for their own assesment.
+
+  int pos;
+  cout<<"enter position to enter element: ";
+  cin>>pos;
+  for(int i = pos; i<size-1 ; i++){
+    arr[i]=arr[i+1];
+  }
+  size = size - 1;
+  for(int i = 0 ; i < size ; i++){
+     cout<<arr[i]<<" ";
+  }
+}
+
+
++-------------------------------------------+
+| Array : Deletion from a specific location |
++-------------------------------------------+
+
+NOTE: With the main function. 
+
+// You are using GCC
+#include<iostream>
+using namespace std;
+void deleteFromPosition(int Array[], int &n, int position){
+  for (int i = position ; i < n ; i++) {
+      Array[i] = Array[i + 1];
+  }
+  n--;
+  
+}
+int main(){
+  int n;
+  cin>>n;
+  int Array[n];
+  for(int i = 0 ; i < n ; i++){
+    cin>>Array[i];
+  }
+  cout<<"Array Before Deletion: ";
+  for(int i = 0 ; i < n ; i++){
+    cout<<Array[i]<<" ";
+  }
+
+  cout<<endl;
+  int position;
+  cout<<"Enter Position to delete from array: ";
+  cin>>position;
+  deleteFromPosition(Array, n, position);
+
+  cout<<"After Deletion from specific position: ";
+  for(int i = 0 ; i < n ; i++){
+    cout<<Array[i]<<" ";
+  }
+  
+}
+
+
++-------------------+
+| Array : Traversal |
++-------------------+
+
+#include<iostream>
+using namespace std;
+int main(){
+  int size;
+  cin>>size;
+  int Array[size];
+  for(int i = 0 ; i < size ; i++){
+    cin>>Array[i];
+  }  
+
+  cout<<"Elements of the Array are: ";
+  for(int i = 0 ; i < size ; i++){
+    cout<<Array[i]<<" ";
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

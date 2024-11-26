@@ -1,0 +1,69 @@
+Array Sorting Algorithm number 1.
+
+1.) Bubble Sort (Sort in Ascending Order)
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+#include<iostream>
+using namespace std;
+void bubble_Sort(int arr[], int size){
+  for(int i = 0 ; i < size-1 ; i++){
+    for(int j = 0 ; j<size-1-i ; j++){
+      if(arr[j]>arr[j+1]){
+        int swap = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1]= swap;
+        }
+      }
+    }
+}
+int main(){
+  int size;
+  cin>>size;
+  int arr[size];
+  for(int i = 0 ; i < size ;i++){
+    cin>>arr[i];
+  }
+
+  bubble_Sort(arr, size);
+  for(int i = 0 ; i < size ; i++){
+    cout<<arr[i]<<" ";
+  }
+}
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+1,b.) Bubble Sort (Descending Order)
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+#include<iostream>
+using namespace std;
+void bubble_Sort(int arr[], int size){
+  for(int i = 0 ; i < size-1 ; i++){
+    for(int j = 0 ; j<size-1-i ; j++){
+      if(arr[j]<arr[j+1]){
+        int swap = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1]= swap;
+        }
+      }
+    }
+}
+int main(){
+  int size;
+  cin>>size;
+  int arr[size];
+  for(int i = 0 ; i < size ;i++){
+    cin>>arr[i];
+  }
+  cout<<"After Sort in Assending Order: ";
+  bubble_Sort(arr, size);
+  for(int i = 0 ; i < size ; i++){
+    cout<<arr[i]<<" ";
+  }
+}
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Insertion Sort and Selection Sort Yet To add... !!

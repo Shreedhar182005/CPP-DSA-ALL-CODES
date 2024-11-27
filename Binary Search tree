@@ -1,0 +1,69 @@
+// You are using GCC
+#include<iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* left = NULL;
+    node* right = NULL;
+};
+node* root = NULL;
+
+void inorder(node* root)
+{
+    if(root != NULL)
+    {
+        inorder(root->left);
+        cout<<root->data << "\t";
+        inorder(root->right);
+    }
+    
+}
+
+node* insertBST(node* root, int val)
+{
+    //Find the Parent and address of node containing val
+    
+    node* par = NULL;
+    node* ptr = root;
+    while(ptr != NULL)
+    {
+        if(val < ptr->data)
+        {
+            par = ptr;  ptr = ptr->left;
+        }
+        else if(val > ptr->data)
+        {
+            par = ptr;            ptr = ptr->right;
+        }
+        else break;
+    }
+    
+    if(ptr == NULL) //val is not present in the tree
+    {
+        node* NEW = new node;
+        NEW->data = val;
+        if(par == NULL) root = NEW; //node is going to be the root
+        else if(val < par->data) //add as a left child
+        par->left = NEW;
+        else 
+        par->right = NEW;
+        cout<<"Inserted "<<val <<endl;
+    }
+    else cout<<"\nElement is already Present, NOT INSERTED! " <<val <<endl;
+    return root;
+}
+
+int main()
+{
+    int n, item;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>item;
+        root = insertBST(root, item);
+    }
+    inorder(root);
+}
+n
